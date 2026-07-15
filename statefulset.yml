@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
         - name: db-cont
-          image: sukumar722/phapp:db-image
+          image: sukumar722/php:db-image
 
           ports:
             - containerPort: 3306
