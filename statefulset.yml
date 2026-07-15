@@ -33,10 +33,10 @@ spec:
           resources:
             requests:
               memory: "128Mi"
-              cpu: "2"
+              cpu: "200m"
             limits:
               memory: "256Mi"
-              cpu: "4"
+              cpu: "500m"
 
           volumeMounts:
             - name: pvc-1
