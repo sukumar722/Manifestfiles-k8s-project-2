@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
         - name: cont-1
-          image: sukumar722/phapp:app-image
+          image: sukumar722/php:app-image
 
           ports:
             - containerPort: 80
