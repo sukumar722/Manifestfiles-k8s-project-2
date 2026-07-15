@@ -1,0 +1,55 @@
+apiVersion: apps/v1
+kind: StatefulSet
+
+metadata:
+  name: mysql
+  namespace: default
+
+spec:
+  serviceName: db-svc
+  replicas: 1
+
+  selector:
+    matchLabels:
+      app: app-db
+
+  template:
+    metadata:
+      labels:
+        app: app-db
+
+    spec:
+      containers:
+        - name: db-cont
+          image: sukumar722/phapp:db-image
+
+          ports:
+            - containerPort: 3306
+
+          envFrom:
+            - secretRef:
+                name: bankapp-db-secret
+
+          resources:
+            requests:
+              memory: "128Mi"
+              cpu: "2"
+            limits:
+              memory: "256Mi"
+              cpu: "4"
+
+          volumeMounts:
+            - name: pvc-1
+              mountPath: /usr/share/nginx/html
+
+  volumeClaimTemplates:
+    - metadata:
+        name: pvc-1
+
+      spec:
+        accessModes:
+          - ReadWriteOnce
+
+        resources:
+          requests:
+            storage: 2Gi
