@@ -5,8 +5,7 @@ metadata:
   namespace: default
 
 spec:
-  replicas: 2
-
+  replicas: 3
   selector:
     matchLabels:
       app: nginx
@@ -20,7 +19,6 @@ spec:
       containers:
         - name: cont-1
           image: sukumar722/php:app-image
-
           ports:
             - containerPort: 80
 
@@ -30,7 +28,7 @@ spec:
                 name: configmap
 
           # Resource requests and limits
-          resources:
+         resources:
             requests:
               memory: "128Mi"
               cpu: "100m"
