@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: configmap
+  name: config-map
   namespace: default
 data:
   DB_HOST: "db-svc"
