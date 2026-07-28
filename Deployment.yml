@@ -28,7 +28,7 @@ spec:
                 name: configmap
 
           # Resource requests and limits
-         resources:
+          resources:
             requests:
               memory: "128Mi"
               cpu: "100m"
