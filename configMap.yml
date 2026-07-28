@@ -4,5 +4,5 @@ metadata:
   name: config-map
   namespace: default
 data:
-  DB_HOST: "db-svc"
+  DB_HOST: "mysqldb"
   DB_PORT: "3306"
