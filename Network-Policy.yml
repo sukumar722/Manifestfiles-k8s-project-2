@@ -8,19 +8,14 @@ spec:
   podSelector:
     matchLabels:
       app: nginx
-
   policyTypes:
     - Ingress
     - Egress
-
   ingress:
     - from:
         - namespaceSelector:
             matchLabels:
-              kubernetes.io/metadata.name: ingress-nginx
-          podSelector:
-            matchLabels:
-              app.kubernetes.io/name: ingress-nginx
+              kubernetes.io/metadata.name: ingress-nginx        
       ports:
         - protocol: TCP
           port: 80
